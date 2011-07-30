@@ -2,7 +2,7 @@ class InstrumentsController < ApplicationController
   # GET /instruments
   # GET /instruments.xml
   def index
-    @instruments = Instrument.all
+    @instruments = Instrument.in_score_order
 
     respond_to do |format|
       format.html # index.html.erb
