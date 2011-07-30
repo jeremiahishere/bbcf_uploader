@@ -1,5 +1,7 @@
 BbcfUploader::Application.routes.draw do
 
+  resources :programs
+
   devise_for :users
 
   root :to => "pages#index"

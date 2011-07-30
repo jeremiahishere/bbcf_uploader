@@ -1,0 +1,25 @@
+%h1 Listing future programs
+
+%table
+  %tr
+    %th Name
+    %th Date
+    %th
+    %th
+    %th
+
+  - @programs.each do |program|
+    %tr
+      %td= program.name
+      %td= program.date
+      %td= link_to 'Show', program
+      %td= link_to 'Edit', edit_program_path(program)
+      %td= link_to 'Destroy', program, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Program', new_program_path
+- if @show_all
+  = link_to "Show current programs", programs_path()
+- else
+  = link_to "Show all programs", programs_path(:all => "y")
