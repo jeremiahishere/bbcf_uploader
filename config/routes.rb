@@ -1,14 +1,14 @@
 BbcfUploader::Application.routes.draw do
-  resources :pieces
-
-  resources :parts
-
-  resources :instruments
 
   devise_for :users
 
   root :to => "pages#index"
   match "/dashboard", :to => "pages#dashboard", :as => "dashboard"
+
+  resources :pieces
+  resources :parts
+  match "/parts/:piece_id/piece", :to => "parts#index", :as => "parts_for_piece"
+  resources :instruments
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

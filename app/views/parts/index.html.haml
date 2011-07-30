@@ -12,6 +12,7 @@
     %tr
       %td= part.instrument_id
       %td= part.description
+      %td= link_to "Download", part.part_file.url
       %td= link_to 'Show', part
       %td= link_to 'Edit', edit_part_path(part)
       %td= link_to 'Destroy', part, :confirm => 'Are you sure?', :method => :delete

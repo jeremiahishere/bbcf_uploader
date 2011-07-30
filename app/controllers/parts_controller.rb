@@ -2,7 +2,11 @@ class PartsController < ApplicationController
   # GET /parts
   # GET /parts.xml
   def index
-    @parts = Part.all
+    if params[:piece_id]
+      @parts = Part.where(:piece_id => params[:piece_id])
+    else
+      @parts = Part.all
+    end
 
     respond_to do |format|
       format.html # index.html.erb

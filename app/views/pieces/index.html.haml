@@ -4,10 +4,8 @@
   %tr
     %th Name
     %th Composer
-    %th Arranger
-    %th Inventory number
-    %th Version number
-    %th Description
+    %th Inventory/Version
+    %th
     %th
     %th
     %th
@@ -15,11 +13,9 @@
   - @pieces.each do |piece|
     %tr
       %td= piece.name
-      %td= piece.composer
-      %td= piece.arranger
-      %td= piece.inventory_number
-      %td= piece.version_number
-      %td= piece.description
+      %td= piece.composer + ", " + piece.arranger
+      %td= piece.inventory_number + ", " + piece.version_number
+      %td= link_to 'Parts', parts_for_piece_path(piece)
       %td= link_to 'Show', piece
       %td= link_to 'Edit', edit_piece_path(piece)
       %td= link_to 'Destroy', piece, :confirm => 'Are you sure?', :method => :delete
