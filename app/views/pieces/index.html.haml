@@ -1,5 +1,6 @@
 %h1 Listing pieces
 
+= link_to 'New Piece', new_piece_path
 %table
   %tr
     %th Name
@@ -19,7 +20,3 @@
       %td= link_to 'Show', piece
       %td= link_to 'Edit', edit_piece_path(piece)
       %td= link_to 'Destroy', piece, :confirm => 'Are you sure?', :method => :delete
-
-%br
-
-= link_to 'New Piece', new_piece_path

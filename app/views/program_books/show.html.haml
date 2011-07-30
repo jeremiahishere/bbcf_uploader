@@ -1,0 +1,13 @@
+All parts in the program 
+= @program.name
+for the 
+= @instrument.name
+
+%table
+  %tr
+    %th Piece
+    %th Download
+  - @parts.each do |part|
+    %tr
+      %td= part.piece.name
+      %td= link_to "Download Part", part.part_file.url

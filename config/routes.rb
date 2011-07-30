@@ -11,6 +11,10 @@ BbcfUploader::Application.routes.draw do
   resources :parts
   match "/parts/:piece_id/piece", :to => "parts#index", :as => "parts_for_piece"
   resources :instruments
+
+  match "/program_books/search", :to => "program_books#search", :as => "program_books_search"
+  match "/program_books", :to => "program_books#show", :as => "program_books"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

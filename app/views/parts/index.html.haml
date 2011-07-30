@@ -1,5 +1,6 @@
 %h1 Listing parts
 
+= link_to 'New Part', new_part_path
 %table
   %tr
     %th Instrument
@@ -10,13 +11,9 @@
 
   - @parts.each do |part|
     %tr
-      %td= part.instrument_id
+      %td= part.instrument.name
       %td= part.description
       %td= link_to "Download", part.part_file.url
       %td= link_to 'Show', part
       %td= link_to 'Edit', edit_part_path(part)
       %td= link_to 'Destroy', part, :confirm => 'Are you sure?', :method => :delete
-
-%br
-
-= link_to 'New Part', new_part_path

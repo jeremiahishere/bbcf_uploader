@@ -9,4 +9,8 @@ class Part < ActiveRecord::Base
   validates_presence_of :instrument_id
   validates_presence_of :piece_id
   validates_attachment_content_type :part_file, :content_type => ['application/pdf']
+
+  def self.instrument_in_program(program, instrument)
+    where(["instrument_id = ? and piece_id in (?)", instrument.id, program.pieces])
+  end
 end

@@ -1,0 +1,9 @@
+= form_tag :program_books, :method => :get do
+  .field 
+    = label_tag :program_id, "Program"
+    = select_tag :program_id, options_from_collection_for_select(Program.current, "id", "name"), :include_blank => "Choose One"
+  .field
+    = label_tag :insrument_id, "Instrument"
+    = select_tag :instrument_id, options_from_collection_for_select(Instrument.in_score_order, "id", "name"), :include_blank => "Choose One"
+  .actions
+    = submit_tag "Get Book"
