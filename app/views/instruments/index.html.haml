@@ -2,12 +2,14 @@
 
 %table
   %tr
+    %th Name
     %th
     %th
     %th
 
   - @instruments.each do |instrument|
     %tr
+      %td= instrument.name
       %td= link_to 'Show', instrument
       %td= link_to 'Edit', edit_instrument_path(instrument)
       %td= link_to 'Destroy', instrument, :confirm => 'Are you sure?', :method => :delete
