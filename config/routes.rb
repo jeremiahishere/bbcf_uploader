@@ -1,4 +1,6 @@
 BbcfUploader::Application.routes.draw do
+  resources :pieces
+
   resources :parts
 
   resources :instruments

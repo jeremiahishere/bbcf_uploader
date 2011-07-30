@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110730172524) do
+ActiveRecord::Schema.define(:version => 20110730181825) do
 
   create_table "instruments", :force => true do |t|
     t.string   "name"
@@ -26,6 +26,18 @@ ActiveRecord::Schema.define(:version => 20110730172524) do
     t.string   "part_file_content_type"
     t.integer  "part_file_file_size"
     t.datetime "part_file_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "piece_id"
+  end
+
+  create_table "pieces", :force => true do |t|
+    t.string   "name"
+    t.string   "composer"
+    t.string   "arranger"
+    t.string   "inventory_number"
+    t.string   "version_number"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

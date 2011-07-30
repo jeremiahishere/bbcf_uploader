@@ -1,0 +1,29 @@
+%h1 Listing pieces
+
+%table
+  %tr
+    %th Name
+    %th Composer
+    %th Arranger
+    %th Inventory number
+    %th Version number
+    %th Description
+    %th
+    %th
+    %th
+
+  - @pieces.each do |piece|
+    %tr
+      %td= piece.name
+      %td= piece.composer
+      %td= piece.arranger
+      %td= piece.inventory_number
+      %td= piece.version_number
+      %td= piece.description
+      %td= link_to 'Show', piece
+      %td= link_to 'Edit', edit_piece_path(piece)
+      %td= link_to 'Destroy', piece, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Piece', new_piece_path

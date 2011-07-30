@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @piece.name
+%p
+  %b Composer:
+  = @piece.composer
+%p
+  %b Arranger:
+  = @piece.arranger
+%p
+  %b Inventory number:
+  = @piece.inventory_number
+%p
+  %b Version number:
+  = @piece.version_number
+%p
+  %b Description:
+  = @piece.description
+
+= link_to 'Edit', edit_piece_path(@piece)
+\|
+= link_to 'Back', pieces_path
