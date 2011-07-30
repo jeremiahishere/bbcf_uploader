@@ -1,0 +1,10 @@
+= form_for @instrument do |f|
+  -if @instrument.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@instrument.errors.count, "error")} prohibited this instrument from being saved:"
+      %ul
+        - @instrument.errors.full_messages.each do |msg|
+          %li= msg
+
+  .actions
+    = f.submit 'Save'
