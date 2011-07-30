@@ -1,6 +1,7 @@
 - if user_signed_in?
-  = link_to "Dashboard", dashboard_path
-  = link_to "Programs", programs_path
-  = link_to "Pieces", pieces_path
-  = link_to "Parts", parts_path
-  = link_to "Instruments", instruments_path
+  %ul{"class" => "tabs"}
+    %li= link_to "Dashboard", dashboard_path
+    %li= link_to "Programs", programs_path
+    %li= link_to "Pieces", pieces_path
+    %li= link_to "Parts", parts_path
+    %li= link_to "Instruments", instruments_path
