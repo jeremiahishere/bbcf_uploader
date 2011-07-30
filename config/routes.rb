@@ -1,4 +1,6 @@
 BbcfUploader::Application.routes.draw do
+  resources :parts
+
   resources :instruments
 
   devise_for :users

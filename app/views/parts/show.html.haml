@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Instrument:
+  = @part.instrument.name
+%p
+  %b Description:
+  = @part.description
+%p
+  %b Part File:
+  = link_to "Download Part", @part.part_file.url
+
+= link_to 'Edit', edit_part_path(@part)
+\|
+= link_to 'Back', parts_path

@@ -10,11 +10,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110730165430) do
+ActiveRecord::Schema.define(:version => 20110730172524) do
 
   create_table "instruments", :force => true do |t|
     t.string   "name"
     t.integer  "score_order"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "parts", :force => true do |t|
+    t.integer  "instrument_id"
+    t.text     "description"
+    t.string   "part_file_file_name"
+    t.string   "part_file_content_type"
+    t.integer  "part_file_file_size"
+    t.datetime "part_file_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

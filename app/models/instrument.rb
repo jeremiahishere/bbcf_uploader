@@ -1,4 +1,5 @@
 class Instrument < ActiveRecord::Base
+  has_many :parts
 
   validates_presence_of :name
   validates_numericality_of :score_order

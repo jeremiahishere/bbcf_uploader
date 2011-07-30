@@ -1,0 +1,19 @@
+= form_for @part, :html => { :multipart => true } do |f|
+  -if @part.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@part.errors.count, "error")} prohibited this part from being saved:"
+      %ul
+        - @part.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :instrument_id
+    = f.select :instrument_id, options_for_select(Instrument.in_score_order.collect { |i| [i.name, i.id] }, :use_blank => "Choose One")
+  .field 
+    = f.label :part_file
+    = f.file_field :part_file
+  .field
+    = f.label :description
+    = f.text_area :description
+  .actions
+    = f.submit 'Save'
