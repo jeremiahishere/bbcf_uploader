@@ -12,6 +12,12 @@ gem 'capistrano'
 gem "ruby-debug"
 #gem 'ruby-debug19', :require => 'ruby-debug'
 
+gem "haml-rails", "~>0.3.4"
+
+
+
+
+
 # Bundle the extra gems:
 # gem 'bj'
 # gem 'nokogiri'
