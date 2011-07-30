@@ -24,5 +24,12 @@
   .field
     = f.label :description
     = f.text_area :description
+  .field
+    Programs: (To edit programs, go to the program manager)
+    %br
+    %ul
+      - @piece.programs.each do |program|
+        %li= program.name if program.current?
+
   .actions
     = f.submit 'Save'

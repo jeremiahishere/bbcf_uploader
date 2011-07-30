@@ -12,5 +12,11 @@
   .field
     = f.label :date
     = f.date_select :date
+  .field
+    = f.label :pieces
+    %br
+    - Piece.all.each do |piece|
+      = check_box_tag "program[piece_ids][]", piece.id, @program.pieces.include?(piece)
+      = piece.name
   .actions
     = f.submit 'Save'

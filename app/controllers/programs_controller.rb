@@ -46,6 +46,7 @@ class ProgramsController < ApplicationController
   # POST /programs
   # POST /programs.xml
   def create
+    params[:product][:piece_ids] ||= []
     @program = Program.new(params[:program])
 
     respond_to do |format|
@@ -62,6 +63,7 @@ class ProgramsController < ApplicationController
   # PUT /programs/1
   # PUT /programs/1.xml
   def update
+    params[:program][:piece_ids] ||= []
     @program = Program.find(params[:id])
 
     respond_to do |format|

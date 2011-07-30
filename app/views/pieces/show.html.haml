@@ -18,6 +18,11 @@
 %p
   %b Description:
   = @piece.description
+%p
+  %b Programs with this piece:
+  %ul
+    - @piece.programs.each do |program|
+      %li= program.name if program.current?
 
 = link_to 'Edit', edit_piece_path(@piece)
 \|

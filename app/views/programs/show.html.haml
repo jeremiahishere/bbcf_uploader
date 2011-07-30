@@ -6,6 +6,12 @@
 %p
   %b Date:
   = @program.date
+%p
+  %b Pieces:
+  %ul
+    - @program.pieces.each do |piece|
+      %li= piece.name
+
 
 = link_to 'Edit', edit_program_path(@program)
 \|
