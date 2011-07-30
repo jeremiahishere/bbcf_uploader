@@ -8,6 +8,7 @@
 
 # instruments seed
 instruments = [
+  "Score",
   "Solo Cornet 1", "Solo Cornet 2", "Solo Cornet 3", "Solo Cornet 4", 
   "Soprano Cornet", "Repiano Cornet", "2nd Cornet", "3rd Cornet",
   "Flugelhorn", "Solo Horn", "1st Horn", "2nd Horn", 
@@ -16,7 +17,7 @@ instruments = [
   "1st Euphonium", "2nd Euphonium", "Euphonium", 
   "Eb Bass", "Bb Bass", 
   "Percussion 1", "Percussion 2", "Percussion 3", "Percussion 4"]
-score_order_number = 1
+score_order_number = 0
 instruments.each do |name|
   inst = Instrument.find_by_name(name)
   if inst.nil?
