@@ -21,3 +21,7 @@ td {
   padding: 5px;
   margin: 5px; 
 }
+
+a, a:visited {
+  color: #333355;
+}

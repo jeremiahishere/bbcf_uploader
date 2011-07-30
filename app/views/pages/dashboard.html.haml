@@ -1,7 +1,17 @@
-Dashboard
-
 %ul
-  %li= link_to "Programs", programs_path
-  %li= link_to "Pieces", pieces_path
-  %li= link_to "Parts", parts_path
-  %li= link_to "Instruments", instruments_path
+  %li
+    = link_to "Programs", programs_path
+    %br
+    Manage programs and concerts.  Add pieces to programs here.
+  %li
+    = link_to "Pieces", pieces_path
+    %br
+    Add new pieces to the system.  Each piece must be created before parts are uploaded.
+  %li
+    = link_to "Parts", parts_path
+    %br
+    Upload pdfs of sheet music and associate them with pieces
+  %li
+    = link_to "Instruments", instruments_path
+    %br
+    Change the name of instrument parts or score order
