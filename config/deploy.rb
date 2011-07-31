@@ -5,10 +5,13 @@ set :repository,  "git@github.com:jeremiahishere/bbcf_uploader.git"
 set :scm, :git
 set :branch, "master"
 set :rails_env, "production"
+set :deploy_to, "/srv/#{application}"
+set :deploy_via, :remote_cache
 
-role :web, "uploader.jeremiahhemphill.com"                          # Your HTTP server, Apache/etc
-role :app, "uploader.jeremiahhemphill.com"                          # This may be the same as your `Web` server
-role :db,  "uploader.jeremiahhemphill.com", :primary => true # This is where Rails migrations will run
+
+role :web, "jeremiahhemphill.com"                          # Your HTTP server, Apache/etc
+role :app, "jeremiahhemphill.com"                          # This may be the same as your `Web` server
+role :db,  "jeremiahhemphill.com", :primary => true # This is where Rails migrations will run
 
 namespace :deploy do
   task :start do
