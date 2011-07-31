@@ -3,17 +3,17 @@
 = link_to 'New Part', new_part_path
 %table
   %tr
+    %th Piece
     %th Instrument
-    %th Description
     %th
     %th
     %th
 
   - @parts.each do |part|
     %tr
+      %td= part.piece.name
       %td= part.instrument.name
-      %td= part.description
       %td= link_to "Download", part.part_file.url
       %td= link_to 'Show', part
       %td= link_to 'Edit', edit_part_path(part)
-      %td= link_to 'Destroy', part, :confirm => 'Are you sure?', :method => :delete
+      %td= button_to 'Destroy', part, :confirm => 'Are you sure?', :method => :delete
