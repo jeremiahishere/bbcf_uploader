@@ -6,6 +6,11 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
+# approved admin user seed
+user = User.create(:email => "admin@bbcf_uploader.com", :password => "password", :password => "password")
+user.approved = true
+user.save
+
 # instruments seed
 instruments = [
   "Score",
@@ -14,7 +19,7 @@ instruments = [
   "Flugelhorn", "Solo Horn", "1st Horn", "2nd Horn", 
   "1st Baritone", "2nd Baritone", 
   "1st Trombone", "2nd Trombone", "Bass Trombone", 
-  "1st Euphonium", "2nd Euphonium", "Euphonium", 
+  "1st Euphonium", "2nd Euphonium",
   "Eb Bass", "Bb Bass", 
   "Percussion 1", "Percussion 2", "Percussion 3", "Percussion 4"]
 score_order_number = 0
