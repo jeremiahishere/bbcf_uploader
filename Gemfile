@@ -10,8 +10,8 @@ gem "devise", "~> 1.4.2"
 # gem 'unicorn'
 
 gem 'capistrano'
-gem "ruby-debug"
-#gem 'ruby-debug19', :require => 'ruby-debug'
+#gem "ruby-debug"
+gem 'ruby-debug19', :require => 'ruby-debug'
 
 gem "haml-rails", "~>0.3.4"
 gem "paperclip", "~> 2.3.16"
