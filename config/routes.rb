@@ -9,11 +9,15 @@ BbcfUploader::Application.routes.draw do
 
   resources :pieces
   resources :parts
-  match "/parts/:piece_id/piece", :to => "parts#index", :as => "parts_for_piece"
+  match "/parts/:piece_id/piece", :to => "parts#index", :as => "parts_for_piece", :action => :get
   resources :instruments
 
-  match "/program_books/search", :to => "program_books#search", :as => "program_books_search"
-  match "/program_books", :to => "program_books#show", :as => "program_books"
+  match "/program_books/search", :to => "program_books#search", :as => "program_books_search", :action => :get
+  match "/program_books", :to => "program_books#show", :as => "program_books", :action => :get
+
+  match "/manage_users", :to => "manage_users#index", :as => "manage_users", :action => :get
+  match "/manage_users/:id", :to => "manage_users#approve", :as => "manage_users_approve", :action => :get
+  match "/manage_users/:id/delete", :to => "manage_users#destroy", :as => "manage_users_destroy", :action => :delete
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
