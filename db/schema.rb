@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20110730184058) do
     t.string   "part_file_content_type"
     t.integer  "part_file_file_size"
     t.datetime "part_file_updated_at"
+    t.string   "saved_part_file_name"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "piece_id"

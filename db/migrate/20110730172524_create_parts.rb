@@ -7,6 +7,7 @@ class CreateParts < ActiveRecord::Migration
       t.string :part_file_content_type
       t.integer :part_file_file_size
       t.datetime :part_file_updated_at
+      t.string :saved_part_file_name
 
       t.timestamps
     end
