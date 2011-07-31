@@ -21,6 +21,13 @@ td {
   padding: 5px;
   margin: 5px; 
 }
+a.button, button, input[type="submit"], input[type="reset"], input[type="button"] {
+  margin-bottom: 0px;
+}
+
+form {
+  margin-bottom:0px;
+}
 
 a, a:visited {
   color: #333355;

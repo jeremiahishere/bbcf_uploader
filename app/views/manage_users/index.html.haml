@@ -16,4 +16,4 @@
           Approved
         - else
           = link_to "Approve", manage_users_approve_path(user), :method => :get
-      %td= link_to "Delete", manage_users_destroy_path(user), :confirm => "Are you sure?", :method => :delete
+      %td= button_to "Delete", manage_users_destroy_path(user), :confirm => "Are you sure?", :method => :delete

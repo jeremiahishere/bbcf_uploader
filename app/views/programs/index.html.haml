@@ -22,4 +22,4 @@
       %td= program.date
       %td= link_to 'Show', program
       %td= link_to 'Edit', edit_program_path(program)
-      %td= link_to 'Destroy', program, :confirm => 'Are you sure?', :method => :delete
+      %td= button_to 'Destroy', program, :confirm => 'Are you sure?', :method => :delete
