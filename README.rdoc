@@ -11,3 +11,6 @@ The first thing you want to do is to change the password of the user admin@bbcf_
 - add links to the pieces from the parts show page
 - add links to the parts from the pieces show page
 - fix the outputs on the piece page so it doesn't have commas all the time
+- figure out why paperclip thinks all files are text/html
+  - looks like a firefox on mac only bug
+- form fields not repopulating on validation failures
