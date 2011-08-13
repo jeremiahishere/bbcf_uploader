@@ -15,6 +15,10 @@
   .field 
     = f.label :part_file
     = f.file_field :part_file
+    - if @part.part_file.url
+      %br
+      A part file has already been uploaded, uploading a new file will overwrite it: 
+      = link_to "Download Part", @part.part_file.url
   .field
     = f.label :description
     = f.text_area :description
