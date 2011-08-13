@@ -8,5 +8,5 @@ The first thing you want to do is to change the password of the user admin@bbcf_
 
 == Future Work
 
-- figure out why paperclip thinks all files are text/html
-  - looks like a firefox on mac only bug
+- there is a firefox on mac bug where paperclip reads all file content types as "text/html" instead of "application/pdf" or whatever other type is correct.  For now, I am commenting out the pdf validation on the part model.
+  - There is still only support for paperclip supported file types.  Generally images + pdfs only.
