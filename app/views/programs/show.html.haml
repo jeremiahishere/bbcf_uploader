@@ -3,12 +3,13 @@
   = @program.name
 %p
   %b Date:
-  = @program.date
+  = @program.date.strftime("%D")
 %p
   %b Pieces:
   %ul
     - @program.pieces.each do |piece|
-      %li= piece.name
+      %li
+        = link_to piece.name, piece_path(piece)
 
 
 = link_to 'Edit', edit_program_path(@program)

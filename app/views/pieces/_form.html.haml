@@ -29,7 +29,9 @@
     %br
     %ul
       - @piece.programs.each do |program|
-        %li= program.name if program.current?
+        - if program.current?
+          %li
+            = link_to program.name, program_path(program)
 
   .actions
     = f.submit 'Save'

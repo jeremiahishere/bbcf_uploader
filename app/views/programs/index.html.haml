@@ -19,7 +19,7 @@
   - @programs.each do |program|
     %tr
       %td= program.name
-      %td= program.date
+      %td= program.date.strftime("%D")
       %td= link_to 'Show', program
       %td= link_to 'Edit', edit_program_path(program)
       %td= button_to 'Destroy', program, :confirm => 'Are you sure?', :method => :delete

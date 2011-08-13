@@ -7,7 +7,7 @@
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
 # approved admin user seed
-user = User.create(:email => "admin@bbcf_uploader.com", :password => "password", :password => "password")
+user = User.create(:email => "admin@bbcfuploader.com", :password => "password", :password => "password")
 user.approved = true
 user.save
 

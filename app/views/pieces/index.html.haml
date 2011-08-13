@@ -14,8 +14,8 @@
   - @pieces.each do |piece|
     %tr
       %td= piece.name
-      %td= piece.composer + ", " + piece.arranger
-      %td= piece.inventory_number + ", " + piece.version_number
+      %td= piece.composer_and_arranger
+      %td= piece.inventory_and_version
       %td= link_to 'Parts', parts_for_piece_path(piece)
       %td= link_to 'Show', piece
       %td= link_to 'Edit', edit_piece_path(piece)
