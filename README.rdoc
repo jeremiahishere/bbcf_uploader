@@ -8,7 +8,5 @@ The first thing you want to do is to change the password of the user admin@bbcf_
 
 == Future Work
 
-- fix the outputs on the piece page so it doesn't have commas all the time
 - figure out why paperclip thinks all files are text/html
   - looks like a firefox on mac only bug
-- form fields not repopulating on validation failures

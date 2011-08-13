@@ -8,10 +8,10 @@
 
   .field
     = f.label :piece_id
-    = f.select :piece_id, options_for_select(Piece.all.collect { |i| [i.name, i.id] }), :include_blank => "Choose One"
+    = f.select :piece_id, options_for_select(Piece.all.collect { |i| [i.name, i.id] }, @part.piece_id), :include_blank => "Choose One"
   .field
     = f.label :instrument_id
-    = f.select :instrument_id, options_for_select(Instrument.in_score_order.collect { |i| [i.name, i.id] }), :include_blank => "Choose One"
+    = f.select :instrument_id, options_for_select(Instrument.in_score_order.collect { |i| [i.name, i.id] }, @part.instrument_id), :include_blank => "Choose One"
   .field 
     = f.label :part_file
     = f.file_field :part_file
