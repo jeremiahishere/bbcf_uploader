@@ -1,5 +1,6 @@
 require "bundler/capistrano"
 
+set :application, "bbcf_uploader"
 set :stages, %w{bbcf personal demo}
 set :default_stage, :bbcf
 require "capistrano/ext/multistage"
@@ -8,7 +9,6 @@ set :repository,  "git@github.com:jeremiahishere/bbcf_uploader.git"
 
 set :scm, :git
 set :branch, "master"
-set :deploy_to, "/srv/#{application}"
 set :deploy_via, :remote_cache
 
 
