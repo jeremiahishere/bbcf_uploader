@@ -39,12 +39,12 @@ end
 after "deploy", :fix_permissions
 
 namespace :db do
-  task :reset_db do
+  task :reset do
     run "cd /srv/#{application}/current && rake db:drop RAILS_ENV=#{rails_env} && rake db:create RAILS_ENV=#{rails_env} && rake db:migrate RAILS_ENV=#{rails_env} && rake db:seed RAILS_ENV=#{rails_env}"
   end  
 
-  task :migrate_db do
+  task :migrate do
     run "cd /srv/#{application}/current && rake db:create RAILS_ENV=#{rails_env} && rake db:migrate RAILS_ENV=#{rails_env}"
   end
 end
-after "deploy", "db:migrate_db"
+after "deploy", "db:migrate"
