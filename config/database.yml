@@ -37,3 +37,23 @@ production:
   username: root
   password:
   socket: /var/run/mysqld/mysqld.sock
+  
+personal_production:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: personalfuploader_production
+  pool: 5
+  username: root
+  password:
+  socket: /var/run/mysqld/mysqld.sock
+
+demo_production:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: demo_uploader_production
+  pool: 5
+  username: root
+  password:
+  socket: /var/run/mysqld/mysqld.sock

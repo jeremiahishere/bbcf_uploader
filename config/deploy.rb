@@ -1,10 +1,13 @@
 require "bundler/capistrano"
-set :application, "bbcf_uploader"
+
+set :stages, %w{bbcf personal demo}
+set :default_stage, :bbcf
+require "capistrano/ext/multistage"
+
 set :repository,  "git@github.com:jeremiahishere/bbcf_uploader.git"
 
 set :scm, :git
 set :branch, "master"
-set :rails_env, "production"
 set :deploy_to, "/srv/#{application}"
 set :deploy_via, :remote_cache
 
@@ -37,11 +40,11 @@ after "deploy", :fix_permissions
 
 namespace :db do
   task :reset_db do
-    run "cd /srv/#{application}/current && rake db:drop && rake db:create && rake db:migrate && rake db:seed"
+    run "cd /srv/#{application}/current && rake db:drop RAILS_ENV=#{rails_env} && rake db:create RAILS_ENV=#{rails_env} && rake db:migrate RAILS_ENV=#{rails_env} && rake db:seed RAILS_ENV=#{rails_env}"
   end  
 
   task :migrate_db do
-    run "cd /srv/#{application}/current && rake db:create RAILS_ENV=production && rake db:migrate RAILS_ENV=production"
+    run "cd /srv/#{application}/current && rake db:create RAILS_ENV=#{rails_env} && rake db:migrate RAILS_ENV=#{rails_env}"
   end
 end
 after "deploy", "db:migrate_db"
