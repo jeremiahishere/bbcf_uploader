@@ -10,7 +10,7 @@ set :repository,  "git@github.com:jeremiahishere/bbcf_uploader.git"
 set :scm, :git
 set :branch, "master"
 set :deploy_via, :remote_cache
-set :ssh_options, { :forward_agent => true, :user => "jeremiah" } # use ssh_agent and public key
+set :ssh_options, { :forward_agent => true, :user => "ubuntu" } # use ssh_agent and public key
 
 
 role :web, "sheetmusic.jeremiahhemphill.com"                          # Your HTTP server, Apache/etc
@@ -30,7 +30,6 @@ namespace :deploy do
     #run "service apache2 restart"
     #run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
   end
-
 end
 
 task :fix_permissions do
