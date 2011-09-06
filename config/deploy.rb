@@ -10,11 +10,12 @@ set :repository,  "git@github.com:jeremiahishere/bbcf_uploader.git"
 set :scm, :git
 set :branch, "master"
 set :deploy_via, :remote_cache
+set :ssh_options, { :forward_agent => true, :user => "jeremiah" } # use ssh_agent and public key
 
 
-role :web, "jeremiahhemphill.com"                          # Your HTTP server, Apache/etc
-role :app, "jeremiahhemphill.com"                          # This may be the same as your `Web` server
-role :db,  "jeremiahhemphill.com", :primary => true # This is where Rails migrations will run
+role :web, "sheetmusic.jeremiahhemphill.com"                          # Your HTTP server, Apache/etc
+role :app, "sheetmusic.jeremiahhemphill.com"                          # This may be the same as your `Web` server
+role :db,  "sheetmusic.jeremiahhemphill.com", :primary => true # This is where Rails migrations will run
 
 namespace :deploy do
   task :start do
@@ -27,14 +28,14 @@ namespace :deploy do
 
   task :restart do
     #run "service apache2 restart"
-    run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
+    #run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
   end
 
 end
 
 task :fix_permissions do
-  run "chown www-data.www-data /srv/#{application} -R"
-  run "chmod -R 777 /srv/#{application}/shared/log"
+  #run "chown www-data.www-data /srv/#{application} -R"
+  #run "chmod -R 777 /srv/#{application}/shared/log"
 end
 after "deploy", :fix_permissions
 
