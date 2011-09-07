@@ -35,7 +35,7 @@ production:
   database: bbcf_uploader_production
   pool: 5
   username: root
-  password:
+  password: password
   socket: /var/run/mysqld/mysqld.sock
   
 personal_production:
@@ -45,7 +45,7 @@ personal_production:
   database: personalfuploader_production
   pool: 5
   username: root
-  password:
+  password: password
   socket: /var/run/mysqld/mysqld.sock
 
 demo_production:
@@ -55,5 +55,5 @@ demo_production:
   database: demo_uploader_production
   pool: 5
   username: root
-  password:
+  password: password
   socket: /var/run/mysqld/mysqld.sock
