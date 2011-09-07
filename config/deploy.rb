@@ -47,5 +47,4 @@ namespace :db do
     run "cd /srv/#{application}/current && rake db:create RAILS_ENV=#{rails_env} && rake db:migrate RAILS_ENV=#{rails_env}"
   end
 end
-# removed this because it requires a password
-# after "deploy", "db:migrate"
+after "deploy", "db:migrate"
