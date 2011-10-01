@@ -4,6 +4,8 @@ A sheet music uploader and manager for the Brass Band of Central Florida, [http:
 
 == Setup
 
+Imagemagick must be installed for paperclip to work.
+
 The first thing you want to do is to change the password of the user admin@bbcf_uploader.com.
 
 == Future Work
