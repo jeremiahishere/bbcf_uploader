@@ -2,6 +2,8 @@
 
 A sheet music uploader and manager for the Brass Band of Central Florida, [http://www.brassbandofcentralflorida.org/].
 
+This was written to backup music for the BBCF 2011 Brass in Concert trip.  The code from the 2011 trip will have the major version 1 and will be in the version_1 branch.
+
 == Setup
 
 Imagemagick must be installed for paperclip to work.

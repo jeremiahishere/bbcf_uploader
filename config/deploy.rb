@@ -8,7 +8,6 @@ require "capistrano/ext/multistage"
 set :repository,  "git@github.com:jeremiahishere/bbcf_uploader.git"
 
 set :scm, :git
-set :branch, "master"
 set :deploy_via, :remote_cache
 set :ssh_options, { :forward_agent => true, :user => "ubuntu" } # use ssh_agent and public key
 
